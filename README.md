@@ -1,2 +1,2 @@
 # 2BKI2
-2BKI2 Aufgaben 
+Exercises for the programming class of 2BKI2 at HSS Wiesloch.

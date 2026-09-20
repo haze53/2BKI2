@@ -1,5 +1,6 @@
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class einkaufsliste {
     public static void main(String[] args) {
@@ -10,7 +11,8 @@ public class einkaufsliste {
        
         String artikel = "";
 
-        String[] einkauflsite = new String[10]; 
+        String[] einkauflsite = new String[20]; 
+        ArrayList<String> liste = new ArrayList<>();
 
          Scanner scanner = new Scanner(System.in);
 
@@ -33,12 +35,23 @@ public class einkaufsliste {
                 System.out.println("Geben Sie den Artikel ein, den Sie hinzufügen möchten:");
                 artikel = scanner.nextLine();
 
-                    for (int i = 0; i < einkauflsite.length; i++){
-                        if (einkauflsite[i] == null) {
-                            einkauflsite[i] = artikel;
-                            break;
-                          
+                    
+                        if (artikel.isEmpty()) {
+                            System.out.println("Ungültiger Artikel. Bitte geben Sie einen gültigen Artikel ein.");
+
+                        } else if (liste.contains(artikel)) {
+                            System.out.println("Artikel ist bereits in der Einkaufsliste vorhanden.");
+
+                        } else {
+                            liste.add(artikel);
+                                for (int i = 0; i < einkauflsite.length; i++){
+                                    if (einkauflsite[i] == null) {
+                                        einkauflsite[i] = artikel;
+                                        
+                                    break;
+                                }
                         }
+
                         
                     }
             
